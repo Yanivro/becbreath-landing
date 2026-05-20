@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Old auto-saved snapshots — superseded by the live files
+becbreath-landing.html
+becbreath-landing.html.artifact.json
+becbreath-landing-[0-9]*.html
+becbreath-landing-[0-9]*.html.artifact.json
+becbreath-print.html.artifact.json
+index-a4.html
+
+# Chat-upload image / PDF dumps (timestamped prefix from the Open Design daemon)
+mpcg*
+mpci*
+mpck*
+mpcl*
+mpcm*
+mpcp*
+mpcq*
+mpdl*
+# (keep the one ice-bath photo we actually use, which lives in /images/)
+
+# PDFs — generated artefacts, kept out of git to keep the repo light.
+# Regenerate from the source HTML via the _make-pdf-* scripts.
+*.pdf
+*.pdf.zip
+
+# Old / unused generator scripts (the active ones are _make-pdf-print.mjs and _make-pdf-a4.mjs)
+_make-pdf.mjs
+_make-pdf-2page.mjs
+
+# Node
+node_modules/
+package-lock.json

@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Becoming Breath — 1:1 Rebirthing Breathwork with Bec</title>
+<meta name="description" content="Trauma-informed 1:1 rebirthing breathwork with Bec. A gentle, profound conscious connected breathing practice — held in a safe, supportive container in Thailand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plaster:#E7E0D1;
+    --plaster-lit:#EFE8DA;
+    --paper:#F4EEDF;
+    --terracotta:#A24A3B;
+    --terracotta-deep:#883C2F;
+    --cocoa:#473A2A;
+    --cocoa-deep:#372C1F;
+    --taupe:#9C8268;
+    --taupe-deep:#84694F;
+    --clay:#8C7257;
+    --cream:#F1E6CB;
+    --bronze:#B0894F;
+    --ink:#2C2418;
+    --ink-soft:#5C4E3B;
+    --on-dark:#EDE3CF;
+
+    --font-script:'Parisienne', cursive;
+    --font:'Jost', system-ui, -apple-system, sans-serif;
+
+    --measure:70rem;
+    --measure-text:44rem;
+    --pad:clamp(74px,11vw,128px);
+
+    /* one torn-paper edge, reused by the colored text bands */
+    --torn:polygon(
+      0% 13px,4% 4px,9% 17px,13% 7px,18% 15px,22% 3px,27% 12px,31% 18px,
+      36% 6px,40% 14px,45% 9px,50% 16px,54% 4px,59% 13px,63% 8px,68% 17px,
+      72% 5px,77% 12px,81% 7px,86% 15px,90% 10px,95% 4px,100% 12px,
+      100% calc(100% - 13px),95% calc(100% - 5px),90% calc(100% - 15px),
+      86% calc(100% - 8px),81% calc(100% - 12px),77% calc(100% - 4px),
+      72% calc(100% - 17px),68% calc(100% - 7px),63% calc(100% - 14px),
+      59% calc(100% - 9px),54% calc(100% - 16px),50% calc(100% - 6px),
+      45% calc(100% - 13px),40% calc(100% - 3px),36% calc(100% - 18px),
+      31% calc(100% - 8px),27% calc(100% - 15px),22% calc(100% - 5px),
+      18% calc(100% - 12px),13% calc(100% - 7px),9% calc(100% - 16px),
+      4% calc(100% - 4px),0% calc(100% - 11px));
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--plaster);
+    color:var(--ink);
+    font-family:var(--font);
+    font-weight:400;
+    font-size:clamp(16px,1.04vw,18px);
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* soft mottled plaster wall */
+  body{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='620' height='620'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.013' numOctaves='4' seed='9'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)' opacity='0.36'/%3E%3C/svg%3E");
+    background-size:680px 680px;
+  }
+  /* fine grain over everything */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+    mix-blend-mode:multiply;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  img{display:block;max-width:100%;height:auto;}
+  a{color:inherit;}
+
+  /* ---------------- type ---------------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.7em;
+    font-weight:500;font-size:.72rem;
+    letter-spacing:.28em;text-transform:uppercase;
+    color:var(--clay);
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7;}
+  .eyebrow.on-dark{color:var(--cream);}
+  .eyebrow.centered{justify-content:center;}
+  .eyebrow.centered::after{content:"";width:26px;height:1px;background:currentColor;opacity:.7;}
+
+  h1,h2{font-weight:300;line-height:1.2;letter-spacing:.02em;}
+  h2{text-transform:uppercase;letter-spacing:.15em;font-size:clamp(1.45rem,2.7vw,2.05rem);}
+  h1{font-size:clamp(2.1rem,4.4vw,3.3rem);letter-spacing:.005em;}
+  h3{font-weight:500;font-size:1rem;text-transform:uppercase;letter-spacing:.17em;line-height:1.35;}
+  p{text-wrap:pretty;}
+  .lead{font-size:clamp(1.08rem,1.45vw,1.26rem);line-height:1.66;font-weight:400;}
+  strong{font-weight:600;color:inherit;}
+  em{font-style:italic;}
+
+  .script{
+    font-family:var(--font-script);font-weight:400;line-height:1.34;
+    padding-bottom:.08em;
+    background:linear-gradient(118deg,#C7A063 8%,#8E6433 40%,#D9BC85 64%,#8A5E33 92%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+  }
+
+  /* ---------------- layout ---------------- */
+  .section{position:relative;padding:var(--pad) clamp(22px,5.4vw,60px);}
+  .wrap{max-width:var(--measure);margin-inline:auto;position:relative;z-index:2;}
+  .narrow{max-width:var(--measure-text);}
+
+  /* torn colored bands laid on the plaster wall */
+  .band{clip-path:var(--torn);filter:drop-shadow(0 7px 16px rgba(38,27,16,.24));}
+  .band-terracotta{background:var(--terracotta);color:var(--on-dark);}
+  .band-cocoa{background:var(--cocoa);color:var(--on-dark);}
+  .band h2{color:var(--cream);}
+  .band p{color:var(--on-dark);}
+  .band::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    mix-blend-mode:soft-light;opacity:.6;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' seed='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size:480px 480px;
+  }
+
+  /* ---------------- buttons ---------------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.65em;
+    font-family:var(--font);font-weight:500;
+    font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
+    text-decoration:none;line-height:1;
+    padding:1.15em 1.85em;border-radius:2px;
+    background:var(--terracotta);color:var(--cream);
+    transition:background .35s ease,transform .35s ease,box-shadow .35s ease;
+    box-shadow:0 6px 18px rgba(38,27,16,.22);
+  }
+  .btn:hover{background:var(--terracotta-deep);transform:translateY(-2px);box-shadow:0 10px 24px rgba(38,27,16,.3);}
+  .btn svg{width:1.25em;height:1.25em;flex:none;}
+  .btn-cream{background:var(--cream);color:var(--cocoa);}
+  .btn-cream:hover{background:#fff4da;}
+  .btn-lg{font-size:.9rem;padding:1.25em 2.15em;}
+
+  /* ================ HERO — full-bleed photo ================ */
+  .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    width:100%;height:100%;object-fit:cover;object-position:76% 14%;
+  }
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(96deg,
+      rgba(231,224,209,.97) 0%,
+      rgba(231,224,209,.92) 18%,
+      rgba(231,224,209,.5) 34%,
+      rgba(231,224,209,0) 48%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    width:100%;max-width:var(--measure);
+    margin-inline:auto;
+    padding:clamp(30px,5vw,54px) clamp(22px,5.4vw,60px);
+    display:flex;flex-direction:column;
+  }
+  /* solid deep bronze (not a washed-out clipped gradient) + plaster halo
+     so the wordmark reads clearly, including the tail over the photo */
+  .hero-mark{
+    font-size:clamp(2.7rem,6vw,4.4rem);
+    background:none;
+    color:#4A3215;-webkit-text-fill-color:#4A3215;
+    text-shadow:
+      0 0 18px rgba(244,238,223,.96),
+      0 0 38px rgba(244,238,223,.82),
+      0 1px 2px rgba(244,238,223,.9);
+  }
+  .hero-copy{margin-top:auto;margin-bottom:auto;max-width:34rem;}
+  .hero-copy .eyebrow{margin-bottom:1.4rem;color:var(--terracotta-deep);font-weight:600;}
+  /* faint plaster halo so any letters drifting toward the photo stay legible */
+  .hero-copy h1{margin-bottom:1.3rem;color:var(--ink);
+    text-shadow:0 0 14px rgba(244,238,223,.78),0 1px 2px rgba(244,238,223,.7);}
+  .hero-copy h1 .accent{color:var(--terracotta-deep);}
+  /* narrower than the copy column so the lead wraps to more, shorter
+     lines and stays in the plaster zone instead of running onto Bec */
+  .hero-copy .lead{color:var(--ink-soft);margin-bottom:2.1rem;max-width:25rem;}
+  .hero-meta{
+    margin-top:1.8rem;font-size:.74rem;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta-deep);
+  }
+
+  /* ================ WELCOME band ================ */
+  .welcome{text-align:center;}
+  /* sandwiched between two full-bleed photos — drop the torn edge so it
+     meets the photos flush instead of exposing a jagged plaster gap */
+  .band.welcome{clip-path:none;filter:none;}
+  .welcome .script{
+    display:block;font-size:clamp(2.4rem,5.4vw,3.5rem);
+    background:linear-gradient(118deg,#F4E9CE,#E8D3A6 55%,#F6EDD4);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:.5rem;
+  }
+  .welcome p{
+    font-size:clamp(1.05rem,1.5vw,1.24rem);
+    max-width:40rem;margin-inline:auto;color:var(--cream);font-weight:300;
+  }
+
+  /* ================ SPLIT — photo half / text half ================ */
+  .split{display:grid;grid-template-columns:1fr;position:relative;}
+  .split-media{position:relative;overflow:hidden;display:flex;align-items:center;}
+  /* default: portrait photo shown in FULL — never cropped. The image's
+     natural height drives the section; the text half centres beside it. */
+  .split-media img{display:block;width:100%;height:auto;}
+  /* fill mode: image covers the column (used where the text is the tall
+     side, e.g. the step list) — keeps a landscape photo from leaving a gap */
+  .split-media--fill{min-height:60vh;}
+  .split-media--fill img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  /* per-section heights so 03 and 04 read closer in size */
+  .split-media--fill.media-tall{min-height:clamp(540px,82vh,800px);}
+  .split-media--fill.media-short{min-height:clamp(420px,54vh,540px);}
+  .split-media::after{ /* faint inner shade so it sits on the wall */
+    content:"";position:absolute;inset:0;
+    box-shadow:inset 0 0 60px rgba(38,27,16,.22);
+  }
+  .split-body{
+    padding:clamp(56px,8vw,104px) clamp(26px,6vw,72px);
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .split-body .inner{max-width:34rem;}
+  .split-body .eyebrow{margin-bottom:1.2rem;}
+  .split-body h2{margin-bottom:1.4rem;}
+  .split-body p{color:var(--ink-soft);}
+  .split-body p + p{margin-top:1rem;}
+  /* dark / colored text halves */
+  .split-body.on-terracotta{background:var(--terracotta);position:relative;}
+  .split-body.on-taupe{background:var(--taupe);position:relative;}
+  .split-body.on-terracotta h2,.split-body.on-taupe h2{color:var(--cream);}
+  .split-body.on-terracotta p,.split-body.on-taupe p{color:var(--on-dark);}
+  .split-body.on-terracotta .eyebrow,.split-body.on-taupe .eyebrow{color:var(--cream);}
+  .split-body.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    mix-blend-mode:soft-light;opacity:.55;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='t2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3Crect width='100%25' height='100%25' filter='url(%23t2)' opacity='0.5'/%3E%3C/svg%3E");
+    background-size:480px 480px;
+  }
+  .split-body.tint .inner{position:relative;z-index:2;}
+
+  /* steps inside a split body */
+  .steps{margin-top:clamp(22px,3.4vw,32px);display:grid;gap:1.25rem;}
+  .step{
+    display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start;
+    padding-bottom:1.2rem;border-bottom:1px solid rgba(241,230,203,.28);
+  }
+  .step:last-of-type{border-bottom:0;padding-bottom:0;}
+  .step .num{font-weight:300;font-size:1.7rem;color:var(--cream);line-height:1;letter-spacing:.04em;}
+  .step h3{color:var(--cream);margin-bottom:.4rem;}
+  .step p{font-size:.97rem;color:var(--on-dark);}
+  .session-note{
+    margin-top:1.5rem;padding-top:1.3rem;
+    border-top:1px solid rgba(241,230,203,.32);
+    font-size:.9rem;letter-spacing:.04em;color:var(--on-dark);
+  }
+  .session-note strong{color:var(--cream);}
+
+  /* breath-journey steps grouped on their own torn cream sheet —
+     lifts the process off the taupe band so it reads as a contained group */
+  .steps-paper{
+    margin-top:clamp(26px,4vw,40px);
+    background:var(--paper);clip-path:var(--torn);
+    padding:clamp(30px,4vw,46px) clamp(26px,3.6vw,42px);
+    filter:drop-shadow(0 16px 28px rgba(28,20,12,.32));
+  }
+  .steps-paper .steps{margin-top:0;}
+  .steps-paper .step{border-bottom-color:rgba(140,114,87,.22);}
+  .steps-paper .step .num{color:var(--terracotta);font-size:2rem;}
+  .steps-paper .step h3{color:var(--ink);}
+  .steps-paper .step p{color:var(--ink-soft);}
+  /* more specific than .split-body.on-taupe p so the note text stays dark */
+  .split-body .steps-paper .session-note{border-top-color:rgba(140,114,87,.26);color:var(--ink-soft);}
+  .split-body .steps-paper .session-note strong{color:var(--ink);}
+
+  /* ================ QUOTE — full-bleed photo, dark ================ */
+  .quote{position:relative;overflow:hidden;display:flex;}
+  .quote-bg{
+    position:absolute;inset:0;z-index:0;
+    width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+  }
+  .quote-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(ellipse at 50% 46%,rgba(28,20,12,.32),rgba(28,20,12,.68) 78%),
+      linear-gradient(180deg,rgba(28,20,12,.55),rgba(28,20,12,.4) 40%,rgba(28,20,12,.62));
+  }
+  .quote-inner{
+    position:relative;z-index:2;
+    max-width:46rem;margin-inline:auto;text-align:center;
+    padding:clamp(110px,17vw,210px) clamp(26px,6vw,40px);
+  }
+  .quote-inner .qmark{
+    font-family:var(--font-script);font-size:4.4rem;line-height:.3;
+    color:var(--bronze);display:block;height:1.5rem;
+  }
+  .quote-inner blockquote{
+    font-weight:300;font-size:clamp(1.5rem,3.1vw,2.3rem);
+    line-height:1.42;color:var(--cream);margin:1.7rem 0 0;
+    text-shadow:0 2px 18px rgba(20,14,8,.55);
+  }
+  .quote-inner blockquote em{font-style:italic;color:#E9C98C;}
+  .quote-inner .by{
+    display:block;margin-top:1.7rem;
+    font-size:.72rem;font-weight:500;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--on-dark);opacity:.85;
+  }
+
+  /* ================ SECTION HEADS / plaster text sections ================ */
+  .sec-head{max-width:40rem;}
+  .sec-head.center{margin-inline:auto;text-align:center;}
+  .sec-head .eyebrow{margin-bottom:1.1rem;}
+  .sec-head h2{color:var(--ink);}
+  .sec-head h2.on-dark{color:var(--cream);}
+  .sec-head p{margin-top:1rem;color:var(--ink-soft);}
+
+  /* location cards — dark on plaster */
+  .cards-3{
+    display:grid;gap:clamp(18px,2.4vw,24px);
+    grid-template-columns:1fr;margin-top:clamp(34px,4.6vw,52px);
+  }
+  .loc-card{
+    background:var(--cocoa);color:var(--on-dark);
+    clip-path:var(--torn);
+    padding:clamp(30px,3.6vw,40px) clamp(26px,3vw,34px);
+    filter:drop-shadow(0 8px 18px rgba(38,27,16,.26));
+    position:relative;
+  }
+  .loc-card .ic{width:34px;height:34px;color:var(--cream);margin-bottom:1.2rem;stroke-width:1.4;}
+  .loc-card h3{color:var(--cream);margin-bottom:.6rem;}
+  .loc-card p{font-size:.96rem;color:var(--on-dark);}
+  .loc-card .tag{
+    display:inline-block;margin-top:1rem;
+    font-size:.62rem;font-weight:500;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--bronze);
+  }
+
+  /* pricing */
+  .price-table{max-width:48rem;margin:clamp(34px,4.6vw,50px) auto 0;}
+  .price-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:1.6rem;padding:1.55rem 0;
+    border-bottom:1px solid rgba(241,230,203,.26);
+  }
+  .price-row:first-child{border-top:1px solid rgba(241,230,203,.26);}
+  .price-row .name{
+    font-weight:500;font-size:1.04rem;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--cream);
+  }
+  .price-row .sub{font-size:.92rem;color:var(--on-dark);margin-top:.25rem;font-weight:300;}
+  .price-row .amt{
+    font-weight:300;font-size:clamp(1.3rem,2.2vw,1.6rem);
+    color:var(--cream);white-space:nowrap;letter-spacing:.02em;
+  }
+  .price-row .amt small{
+    display:block;font-size:.58rem;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--bronze);margin-top:.3rem;text-align:right;
+  }
+  .integration-note{
+    max-width:48rem;margin:clamp(26px,3.6vw,38px) auto 0;
+    border-left:2px solid var(--bronze);
+    padding:.4rem 0 .4rem 1.5rem;
+    font-size:.98rem;color:var(--on-dark);font-weight:300;
+  }
+  .integration-note strong{color:var(--cream);}
+
+  /* before we begin */
+  .prep-grid{
+    display:grid;gap:clamp(22px,3vw,34px) clamp(28px,4vw,52px);
+    grid-template-columns:1fr;margin-top:clamp(34px,4.6vw,52px);
+  }
+  .prep-item{padding-top:1.3rem;border-top:2px solid var(--terracotta);}
+  .prep-item h3{color:var(--ink);margin-bottom:.6rem;}
+  .prep-item p{font-size:.98rem;color:var(--ink-soft);}
+  .prep-item ol{margin:.55rem 0 0;padding-left:1.15rem;font-size:.98rem;color:var(--ink-soft);}
+  .prep-item ol li{margin-bottom:.3rem;}
+  .prep-item ol li strong{color:var(--ink);}
+
+  /* ================ CLOSING — split: cocoa text + full portrait ================ */
+  .split-body.on-cocoa{background:var(--cocoa);position:relative;}
+  .split-body.on-cocoa h2{color:var(--cream);}
+  .split-body.on-cocoa p{color:var(--on-dark);}
+  .split-body.on-cocoa .eyebrow{color:var(--cream);}
+  .closing .inner .btn{margin:.6rem 0 1.7rem;}
+  .signoff{
+    font-family:var(--font-script);font-size:clamp(2.2rem,4.6vw,3.1rem);
+    line-height:1;color:var(--cream);
+  }
+
+  /* ================ FOOTER ================ */
+  .footer{
+    background:var(--cocoa-deep);color:var(--on-dark);text-align:center;
+    padding:clamp(54px,7.5vw,84px) clamp(22px,5vw,56px) clamp(40px,5vw,56px);
+  }
+  .footer .script{font-size:clamp(2.2rem,4.2vw,3rem);}
+  .footer .handle{
+    margin-top:.5rem;font-size:.74rem;font-weight:500;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--cream);
+  }
+  .footer .fnote{
+    max-width:34rem;margin:1.8rem auto 0;
+    font-size:.88rem;font-weight:300;line-height:1.7;
+    color:rgba(237,227,207,.62);
+  }
+
+  /* ================ floating CTA ================ */
+  .float-cta{
+    position:fixed;right:clamp(16px,3vw,30px);bottom:clamp(16px,3vw,30px);z-index:60;
+    display:inline-flex;align-items:center;gap:.55em;
+    background:var(--terracotta);color:var(--cream);
+    font-family:var(--font);font-weight:500;font-size:.74rem;
+    letter-spacing:.13em;text-transform:uppercase;text-decoration:none;
+    padding:1em 1.3em;border-radius:2px;
+    box-shadow:0 12px 28px rgba(38,27,16,.4);
+    opacity:0;transform:translateY(14px);pointer-events:none;
+    transition:opacity .4s ease,transform .4s ease,background .3s ease;
+  }
+  .float-cta.show{opacity:1;transform:none;pointer-events:auto;}
+  .float-cta:hover{background:var(--terracotta-deep);}
+  .float-cta svg{width:1.3em;height:1.3em;}
+
+  /* ================ reveal ================ */
+  .reveal{opacity:0;transform:translateY(22px);
+    transition:opacity .8s ease,transform .8s ease;
+    transition-delay:calc(var(--d,0)*100ms);}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ================ responsive ================ */
+  @media(min-width:860px){
+    .split{grid-template-columns:1fr 1fr;}
+    .split--textleft .split-media{order:2;}
+  }
+  @media(max-width:859px){
+    .hero-bg{object-position:74% 26%;}
+    /* left-origin scrim (same direction as desktop): plaster covers the
+       left where the wordmark + copy sit, and clears toward the right so
+       Bec stays visible — no top/bottom band obscuring her */
+    .hero-scrim{
+      background:linear-gradient(88deg,
+        rgba(231,224,209,.99) 0%,
+        rgba(231,224,209,.96) 30%,
+        rgba(231,224,209,.62) 48%,
+        rgba(231,224,209,.12) 66%,
+        rgba(231,224,209,0) 80%);
+    }
+    /* wordmark stacks to two lines, left-aligned so it stays in the lit
+       left zone clear of Bec — and drops the faint bronze gradient for a
+       solid terracotta that reads cleanly against the photo */
+    .hero-mark{
+      font-size:clamp(3rem,13vw,4.2rem);
+      line-height:.98;
+      text-align:left;
+      margin-top:auto;
+      background:none;
+      color:var(--terracotta-deep);
+      -webkit-text-fill-color:var(--terracotta-deep);
+      text-shadow:0 1px 16px rgba(243,236,223,.85);
+    }
+    .hero-mark span{display:block;}
+    .hero-copy{margin-top:1.7rem;margin-bottom:auto;}
+    .float-cta span{display:none;}
+    .float-cta{padding:1em;}
+    .split-media--fill.media-tall,
+    .split-media--fill.media-short{min-height:58vh;}
+  }
+  @media(min-width:680px){
+    .cards-3{grid-template-columns:repeat(3,1fr);}
+    .prep-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .btn:hover,.float-cta:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO — full-bleed ================= -->
+<header class="hero" data-screen-label="01 Hero">
+  <img class="hero-bg" src="images/20250530-DSC02390-2.jpg" alt="Bec seated in conscious connected breathing against a warm plaster wall">
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <div class="script hero-mark reveal"><span>Becoming</span> <span>Breath</span></div>
+    <div class="hero-copy">
+      <span class="eyebrow reveal" style="--d:1">1:1 Rebirthing Breathwork &middot; Thailand</span>
+      <h1 class="reveal" style="--d:2">A gentle way back to the wisdom, beauty &amp; <span class="accent">power within</span></h1>
+      <p class="lead reveal" style="--d:3">Conscious connected breathwork, held in a safe, supportive, trauma-informed container. No previous experience needed &mdash; just a willingness to show up and breathe.</p>
+      <a class="btn btn-lg reveal" style="--d:4" href="#contact" data-wa>
+        <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.8L.4 31.6l8.2-2.1c2.3 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-7 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 20.6 2.8 18.3 2.8 16 2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 28.7 16 28.7zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.2s1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8.9.3 1.8.2 2.4.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+        Message Bec on WhatsApp
+      </a>
+      <p class="hero-meta reveal" style="--d:5">Sessions 1.5&ndash;2 hrs &nbsp;&middot;&nbsp; In person or online</p>
+    </div>
+  </div>
+</header>
+
+<!-- ================= WELCOME ================= -->
+<section class="section band band-terracotta welcome" data-screen-label="02 Welcome">
+  <div class="wrap narrow reveal">
+    <span class="script">Welcome, beautiful soul</span>
+    <p>Thank you for your interest in working together. This page holds everything you need before we begin &mdash; so you can arrive informed, prepared, and at ease.</p>
+  </div>
+</section>
+
+<!-- ================= WHAT IS REBIRTHING — split ================= -->
+<section class="split" data-screen-label="03 What Is Rebirthing">
+  <div class="split-media split-media--fill media-tall reveal">
+    <img src="images/ice-bath-DSC01968.jpg" alt="Bec resting in an outdoor ice bath, eyes closed, surrounded by greenery" style="object-position:50% 42%;">
+  </div>
+  <div class="split-body">
+    <div class="inner reveal">
+      <span class="eyebrow">The Practice</span>
+      <h2>What is rebirthing breathwork?</h2>
+      <p>Rebirthing breathwork is a gentle yet profound conscious connected breathing practice. Through the breath, we create the conditions for the body and nervous system to release deeply held tension, emotion, and old patterns &mdash; often ones that words alone can&rsquo;t reach.</p>
+      <p>Sessions are held in a safe, supportive container with a trauma-informed approach. You don&rsquo;t need any previous experience &mdash; just a willingness to show up and breathe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ME — split ================= -->
+<section class="split split--textleft" data-screen-label="04 About Me">
+  <div class="split-media split-media--fill media-short reveal">
+    <img src="images/20250612-DSC03090-2.jpg" alt="Bec laughing freely, resting on a patterned blanket on the beach" style="object-position:50% 88%;">
+  </div>
+  <div class="split-body on-terracotta tint">
+    <div class="inner reveal">
+      <span class="eyebrow">About Me</span>
+      <h2>A grounded, trauma-informed practice</h2>
+      <p>I bring a grounded, trauma-informed approach to this work, with experience supporting clients through deep healing &mdash; from those navigating trauma and nervous system dysregulation, to professional athletes using the breath as a tool for performance and recovery.</p>
+      <p>What makes my approach a little different is the container I create. Every session is deeply personal &mdash; shaped around <em>you</em>, your history, and where you are right now. I work slowly and gently, always led by what your body is ready for. No pushing, no performing, no pressure to have a particular experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE — full-bleed ================= -->
+<section class="quote" data-screen-label="05 Quote">
+  <img class="quote-bg" src="images/20250604-DSC03015.jpg" alt="Bec resting with eyes closed, breathing slowly amid greenery">
+  <div class="quote-scrim"></div>
+  <div class="quote-inner reveal">
+    <span class="qmark" aria-hidden="true">&ldquo;</span>
+    <blockquote>Creating that environment of trust isn&rsquo;t something I add to the work. <em>It is the work.</em></blockquote>
+    <span class="by">Bec &middot; Becoming Breath</span>
+  </div>
+</section>
+
+<!-- ================= WHAT TO EXPECT — split ================= -->
+<section class="split" data-screen-label="06 What To Expect">
+  <div class="split-media reveal">
+    <img src="images/20250530-DSC02502.jpg" alt="Bec facilitating a one-to-one breathwork session">
+  </div>
+  <div class="split-body on-taupe tint">
+    <div class="inner reveal">
+      <span class="eyebrow">In A Session</span>
+      <h2>What to expect</h2>
+      <p>Each session is tailored to you. Emotions, physical sensations, or unexpected insights may surface &mdash; a normal and healthy part of the process. You will always be supported throughout.</p>
+      <div class="steps-paper reveal">
+        <div class="steps">
+          <div class="step">
+            <span class="num">01</span>
+            <div><h3>Check-in</h3><p>A conversation to understand where you are right now, and to gently set an intention for our time together.</p></div>
+          </div>
+          <div class="step">
+            <span class="num">02</span>
+            <div><h3>The breathing journey</h3><p>The main practice &mdash; a guided, conscious connected breath, held at the pace your body is ready for.</p></div>
+          </div>
+          <div class="step">
+            <span class="num">03</span>
+            <div><h3>Rest &amp; integrate</h3><p>Time to rest, integrate, and debrief afterwards &mdash; letting the experience settle before you leave.</p></div>
+          </div>
+        </div>
+        <p class="session-note"><strong>Session length</strong> &mdash; 1.5 to 2 hours. Your initial session is typically closer to 2 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="section" data-screen-label="07 Location Options">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where We Meet</span>
+      <h2>Location options</h2>
+      <p>We can work together in whichever setting feels right for you.</p>
+    </div>
+    <div class="cards-3">
+      <div class="loc-card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>
+        <h3>At my space</h3>
+        <p>A calm, private environment set up especially for this work.</p>
+      </div>
+      <div class="loc-card reveal" style="--d:1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-7h6v7"/><path d="M9 9h.01M15 9h.01"/></svg>
+        <h3>At your home</h3>
+        <p>I come to you, in a space where you already feel comfortable.</p>
+        <span class="tag">A travel fee may apply</span>
+      </div>
+      <div class="loc-card reveal" style="--d:2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="13" rx="1.5"/><path d="M8 21h8M12 17.5V21"/></svg>
+        <h3>Online</h3>
+        <p>Via video call &mdash; you&rsquo;ll need a quiet, private space where you can lie down comfortably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section band band-cocoa" data-screen-label="08 Pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <h2 class="on-dark">Pricing</h2>
+    </div>
+    <div class="price-table reveal">
+      <div class="price-row">
+        <div><div class="name">Single session</div><div class="sub">A complete 1:1 breathwork session</div></div>
+        <div class="amt">4,000 THB</div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Package of 3 sessions</div><div class="sub">For going deeper over time &mdash; 10,500 THB total</div></div>
+        <div class="amt">3,500 THB<small>per session</small></div>
+      </div>
+      <div class="price-row">
+        <div><div class="name">Integration call</div><div class="sub">Approximately 1 hour</div></div>
+        <div class="amt">1,000 THB</div>
+      </div>
+    </div>
+    <p class="integration-note reveal"><strong>A note on integration calls.</strong> I highly recommend booking one in the days following your breathwork session &mdash; a space to process what came up, make meaning of your experience, and support lasting change. An optional add-on to any session.</p>
+  </div>
+</section>
+
+<!-- ================= BEFORE WE BEGIN ================= -->
+<section class="section" data-screen-label="09 Before We Begin">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Practical Details</span>
+      <h2>Before we begin</h2>
+    </div>
+    <div class="prep-grid">
+      <div class="prep-item reveal">
+        <h3>Payment</h3>
+        <p>Accepted in cash (Thai Baht) or by bank transfer via Wise. Details are shared directly, and payment is due at the time of your session.</p>
+      </div>
+      <div class="prep-item reveal" style="--d:1">
+        <h3>Two short forms</h3>
+        <p>Before your first session I&rsquo;ll send two short forms to complete:</p>
+        <ol>
+          <li><strong>Session Intake Form</strong> &mdash; to help me understand you and your needs before we meet.</li>
+          <li><strong>Disclaimer Agreement</strong> &mdash; so we&rsquo;re both clear on the nature of the work.</li>
+        </ol>
+      </div>
+      <div class="prep-item reveal">
+        <h3>Confidentiality</h3>
+        <p>These forms &mdash; and everything shared in session &mdash; are kept strictly confidential. They exist only to support your safety and wellbeing.</p>
+      </div>
+      <div class="prep-item reveal" style="--d:1">
+        <h3>Rescheduling</h3>
+        <p>Please give as much notice as possible if you need to reschedule. We can discuss the cancellation policy during our initial call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSING — split ================= -->
+<section class="split split--textleft closing" id="contact" data-screen-label="10 Closing">
+  <div class="split-media reveal">
+    <img src="images/20250604-DSC03028.jpg" alt="Bec smiling warmly, surrounded by greenery">
+  </div>
+  <div class="split-body on-cocoa tint">
+    <div class="inner reveal">
+      <span class="eyebrow">Let&rsquo;s Begin</span>
+      <h2>I&rsquo;m looking forward to working with you</h2>
+      <p>Please don&rsquo;t hesitate to reach out with any questions before our session. The easiest way to reach me is a message on WhatsApp &mdash; we&rsquo;ll find a time that feels right for you.</p>
+      <a class="btn btn-cream btn-lg" href="#contact" data-wa>
+        <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.8L.4 31.6l8.2-2.1c2.3 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-7 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 20.6 2.8 18.3 2.8 16 2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 28.7 16 28.7zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.2s1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8.9.3 1.8.2 2.4.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+        Message Bec on WhatsApp
+      </a>
+      <div class="signoff">With love, Bec x</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" data-screen-label="11 Footer">
+  <div class="reveal">
+    <div class="script">Becoming Breath</div>
+    <div class="handle">@BecBreath</div>
+    <p class="fnote">All sessions are held with full confidentiality, care, and a trauma-informed approach. Your comfort and safety are always the priority.</p>
+  </div>
+</footer>
+
+<a class="float-cta" href="#contact" data-wa aria-label="Message Bec on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.8L.4 31.6l8.2-2.1c2.3 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-7 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 20.6 2.8 18.3 2.8 16 2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 28.7 16 28.7zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.2s1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8.9.3 1.8.2 2.4.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+  <span>Message Bec</span>
+</a>
+
+<script>
+  /* WhatsApp links — replace PLACEHOLDER with Bec's number (country code, no + or spaces) */
+  var WA_NUMBER = "PLACEHOLDER";
+  var WA_TEXT = encodeURIComponent("Hi Bec, I found your page and I'd love to know more about a 1:1 breathwork session.");
+  var waHref = "https://wa.me/" + WA_NUMBER + "?text=" + WA_TEXT;
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.setAttribute("href", waHref);
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener");
+  });
+
+  /* gentle fade-and-rise on scroll */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold:.14, rootMargin:"0px 0px -7% 0px" });
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* floating CTA appears once past the hero */
+  var hero = document.querySelector(".hero");
+  var floatCta = document.querySelector(".float-cta");
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ floatCta.classList.toggle("show", !e.isIntersecting); });
+  }, { threshold:0 }).observe(hero);
+</script>
+
+</body>
+</html>
