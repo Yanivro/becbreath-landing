@@ -32,3 +32,8 @@ _make-pdf-2page.mjs
 # Node
 node_modules/
 package-lock.json
+
+# More chat-upload dumps + local design-tool folder
+mpe*
+mq9*
+.od-skills/

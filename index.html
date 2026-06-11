@@ -149,9 +149,9 @@
     position:absolute;inset:0;z-index:1;
     background:linear-gradient(96deg,
       rgba(231,224,209,.97) 0%,
-      rgba(231,224,209,.92) 18%,
-      rgba(231,224,209,.5) 34%,
-      rgba(231,224,209,0) 48%);
+      rgba(231,224,209,.94) 36%,
+      rgba(231,224,209,.6) 48%,
+      rgba(231,224,209,0) 60%);
   }
   .hero-inner{
     position:relative;z-index:2;
@@ -160,29 +160,28 @@
     padding:clamp(30px,5vw,54px) clamp(22px,5.4vw,60px);
     display:flex;flex-direction:column;
   }
-  /* solid deep bronze (not a washed-out clipped gradient) + plaster halo
-     so the wordmark reads clearly, including the tail over the photo */
+  /* same bronze gradient family, tuned into a deeper readable range so it
+     doesn't blend into the plaster — plus a thin cream backing (not a cloud)
+     so the letters keep their edges against the photo */
   .hero-mark{
-    font-size:clamp(2.7rem,6vw,4.4rem);
-    background:none;
-    color:#4A3215;-webkit-text-fill-color:#4A3215;
-    text-shadow:
-      0 0 18px rgba(244,238,223,.96),
-      0 0 38px rgba(244,238,223,.82),
-      0 1px 2px rgba(244,238,223,.9);
+    font-size:clamp(2.9rem,6.4vw,4.8rem);
+    margin-bottom:.4em;
+    background:linear-gradient(118deg,#A6792F 6%,#5C3D16 38%,#B0843B 62%,#583B16 92%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 1px 3px rgba(244,238,223,.9));
   }
   .hero-copy{margin-top:auto;margin-bottom:auto;max-width:34rem;}
-  .hero-copy .eyebrow{margin-bottom:1.4rem;color:var(--terracotta-deep);font-weight:600;}
-  /* faint plaster halo so any letters drifting toward the photo stay legible */
-  .hero-copy h1{margin-bottom:1.3rem;color:var(--ink);
-    text-shadow:0 0 14px rgba(244,238,223,.78),0 1px 2px rgba(244,238,223,.7);}
+  /* quiet supporting lines — only the wordmark + one accent phrase carry colour */
+  .hero-copy .eyebrow{margin-bottom:1.4rem;color:var(--clay);font-weight:500;}
+  .hero-copy h1{margin-bottom:1.3rem;color:var(--ink);}
   .hero-copy h1 .accent{color:var(--terracotta-deep);}
   /* narrower than the copy column so the lead wraps to more, shorter
      lines and stays in the plaster zone instead of running onto Bec */
   .hero-copy .lead{color:var(--ink-soft);margin-bottom:2.1rem;max-width:25rem;}
   .hero-meta{
-    margin-top:1.8rem;font-size:.74rem;font-weight:600;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta-deep);
+    margin-top:1.8rem;font-size:.74rem;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--clay);
   }
 
   /* ================ WELCOME band ================ */
@@ -435,33 +434,35 @@
     .split--textleft .split-media{order:2;}
   }
   @media(max-width:859px){
-    .hero-bg{object-position:74% 26%;}
-    /* left-origin scrim (same direction as desktop): plaster covers the
-       left where the wordmark + copy sit, and clears toward the right so
-       Bec stays visible — no top/bottom band obscuring her */
-    .hero-scrim{
-      background:linear-gradient(88deg,
-        rgba(231,224,209,.99) 0%,
-        rgba(231,224,209,.96) 30%,
-        rgba(231,224,209,.62) 48%,
-        rgba(231,224,209,.12) 66%,
-        rgba(231,224,209,0) 80%);
+    /* mobile hero: photo on top fading into the plaster wall, all text on
+       solid plaster below — nothing overlays Bec, everything reads */
+    .hero{display:block;min-height:0;}
+    .hero-bg{
+      position:relative;inset:auto;display:block;
+      width:100%;height:52svh;
+      object-fit:cover;object-position:70% 18%;
     }
-    /* wordmark stacks to two lines, left-aligned so it stays in the lit
-       left zone clear of Bec — and drops the faint bronze gradient for a
-       solid terracotta that reads cleanly against the photo */
+    .hero-scrim{
+      bottom:auto;height:52svh;
+      background:linear-gradient(to bottom,
+        rgba(231,224,209,0) 60%,
+        rgba(231,224,209,.55) 84%,
+        rgba(231,224,209,1) 100%);
+    }
+    .hero-inner{padding-top:0;}
+    /* wordmark stacks to two lines and lifts into the photo's plaster fade —
+       same deep bronze gradient as desktop, with a thin cream backing for
+       the letters that touch the fade zone */
     .hero-mark{
       font-size:clamp(3rem,13vw,4.2rem);
       line-height:.98;
       text-align:left;
-      margin-top:auto;
-      background:none;
-      color:var(--terracotta-deep);
-      -webkit-text-fill-color:var(--terracotta-deep);
-      text-shadow:0 1px 16px rgba(243,236,223,.85);
+      margin-top:calc(-1*clamp(54px,14vw,80px));
+      filter:drop-shadow(0 1px 2px rgba(244,238,223,.95))
+             drop-shadow(0 0 8px rgba(244,238,223,.6));
     }
     .hero-mark span{display:block;}
-    .hero-copy{margin-top:1.7rem;margin-bottom:auto;}
+    .hero-copy{margin-top:1.4rem;margin-bottom:0;padding-bottom:clamp(28px,7vw,48px);}
     .float-cta span{display:none;}
     .float-cta{padding:1em;}
     .split-media--fill.media-tall,
@@ -487,7 +488,7 @@
   <div class="hero-inner">
     <div class="script hero-mark reveal"><span>Becoming</span> <span>Breath</span></div>
     <div class="hero-copy">
-      <span class="eyebrow reveal" style="--d:1">1:1 Rebirthing Breathwork &middot; Thailand</span>
+      <span class="eyebrow reveal" style="--d:1">1:1 Rebirthing Breathwork</span>
       <h1 class="reveal" style="--d:2">A gentle way back to the wisdom, beauty &amp; <span class="accent">power within</span></h1>
       <p class="lead reveal" style="--d:3">Conscious connected breathwork, held in a safe, supportive, trauma-informed container. No previous experience needed &mdash; just a willingness to show up and breathe.</p>
       <a class="btn btn-lg reveal" style="--d:4" href="#contact" data-wa>
@@ -529,7 +530,7 @@
   </div>
   <div class="split-body on-terracotta tint">
     <div class="inner reveal">
-      <span class="eyebrow">About Me</span>
+      <span class="eyebrow">My Role</span>
       <h2>A grounded, trauma-informed practice</h2>
       <p>I bring a grounded, trauma-informed approach to this work, with experience supporting clients through deep healing &mdash; from those navigating trauma and nervous system dysregulation, to professional athletes using the breath as a tool for performance and recovery.</p>
       <p>What makes my approach a little different is the container I create. Every session is deeply personal &mdash; shaped around <em>you</em>, your history, and where you are right now. I work slowly and gently, always led by what your body is ready for. No pushing, no performing, no pressure to have a particular experience.</p>

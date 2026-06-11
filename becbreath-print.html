@@ -173,10 +173,14 @@
      white-space:nowrap forces "Becoming Breath" onto a single line */
   .hero-mark{
     font-size:clamp(3.2rem,6vw,4.8rem);
-    line-height:1.05;
-    color:var(--terracotta-deep);
-    -webkit-text-fill-color:var(--terracotta-deep);
-    background:none;
+    line-height:1.3;
+    padding-bottom:.12em;
+    /* SOLID deep bronze — NOT a background-clip:text gradient. Apple Preview
+       on iPhone can't clip a gradient to the glyphs, so it fills the element
+       box and the wordmark turns into a rectangle. Solid keeps the warm
+       bronze tone and renders identically in every PDF viewer. */
+    color:#6E4A1E;
+    filter:drop-shadow(0 1px 3px rgba(244,238,223,.9));
     margin-bottom:1.5rem;
     white-space:nowrap;
   }
@@ -188,14 +192,13 @@
      drops to a new line that's well inside the opaque scrim zone */
   .hero-copy h1{
     margin-bottom:1.3rem;color:var(--ink);max-width:26rem;
-    text-shadow:0 0 18px rgba(244,238,223,.92),0 0 6px rgba(244,238,223,.95);
   }
-  /* "power within" is the sole accent in the heading — keep it bold and
-     give it a stronger plaster halo so it reads cleanly even where the
-     scrim is starting to fade onto the photo */
+  /* "power within" is the sole accent in the heading. The scrim already
+     backs the whole headline column with solid plaster, so NO halo is
+     needed — stacked cream text-shadows rasterize into a hard box in the
+     PDF (the "box around power" bug). Bold deep terracotta carries it. */
   .hero-copy h1 .accent{
     color:var(--terracotta-deep);font-weight:600;
-    text-shadow:0 0 22px rgba(244,238,223,.98),0 0 8px rgba(244,238,223,.98),0 1px 2px rgba(244,238,223,.95);
   }
   .hero-copy .lead{color:var(--ink-soft);margin-bottom:2.1rem;max-width:25rem;}
   .hero-meta{
@@ -208,10 +211,12 @@
   /* sandwiched between two full-bleed photos — drop the torn edge so it
      meets the photos flush instead of exposing a jagged plaster gap */
   .band.welcome{clip-path:none;filter:none;}
+  /* SOLID cream — NOT a background-clip:text gradient. iOS / Apple Preview's
+     PDF rasterizer can't clip gradients to glyphs, so it fills the whole
+     element box instead → the cream rectangle bug. Solid renders everywhere. */
   .welcome .script{
     display:block;font-size:clamp(2.4rem,5.4vw,3.5rem);
-    background:linear-gradient(118deg,#F4E9CE,#E8D3A6 55%,#F6EDD4);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
+    color:var(--cream);
     margin-bottom:.5rem;
   }
   .welcome p{
@@ -500,7 +505,7 @@
 
 <!-- ================= HERO — full-bleed ================= -->
 <header class="hero" data-screen-label="01 Hero">
-  <img class="hero-bg" src="images/20250530-DSC02390-2.jpg" alt="Bec seated in conscious connected breathing against a warm plaster wall">
+  <img class="hero-bg" src="print-assets/20250530-DSC02390-2.jpg" alt="Bec seated in conscious connected breathing against a warm plaster wall">
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="script hero-mark reveal"><span>Becoming</span> <span>Breath</span></div>
@@ -528,7 +533,7 @@
 <!-- ================= WHAT IS REBIRTHING — split ================= -->
 <section class="split" data-screen-label="03 What Is Rebirthing">
   <div class="split-media split-media--fill media-tall reveal">
-    <img src="images/ice-bath-DSC01968.jpg" alt="Bec resting in an outdoor ice bath, eyes closed, surrounded by greenery" style="object-position:50% 42%;">
+    <img src="print-assets/ice-bath-DSC01968.jpg" alt="Bec resting in an outdoor ice bath, eyes closed, surrounded by greenery" style="object-position:50% 42%;">
   </div>
   <div class="split-body">
     <div class="inner reveal">
@@ -543,7 +548,7 @@
 <!-- ================= ABOUT ME — split ================= -->
 <section class="split split--textleft" data-screen-label="04 About Me">
   <div class="split-media split-media--fill media-short reveal">
-    <img src="images/20250612-DSC03090-2.jpg" alt="Bec laughing freely, resting on a patterned blanket on the beach" style="object-position:50% 88%;">
+    <img src="print-assets/20250612-DSC03090-2.jpg" alt="Bec laughing freely, resting on a patterned blanket on the beach" style="object-position:50% 88%;">
   </div>
   <div class="split-body on-terracotta tint">
     <div class="inner reveal">
@@ -557,7 +562,7 @@
 
 <!-- ================= QUOTE — full-bleed ================= -->
 <section class="quote" data-screen-label="05 Quote">
-  <img class="quote-bg" src="images/20250604-DSC03015.jpg" alt="Bec resting with eyes closed, breathing slowly amid greenery">
+  <img class="quote-bg" src="print-assets/20250604-DSC03015.jpg" alt="Bec resting with eyes closed, breathing slowly amid greenery">
   <div class="quote-scrim"></div>
   <div class="quote-inner reveal">
     <span class="qmark" aria-hidden="true">&ldquo;</span>
@@ -569,7 +574,7 @@
 <!-- ================= WHAT TO EXPECT — split ================= -->
 <section class="split" data-screen-label="06 What To Expect">
   <div class="split-media reveal">
-    <img src="images/20250530-DSC02502.jpg" alt="Bec facilitating a one-to-one breathwork session">
+    <img src="print-assets/20250530-DSC02502.jpg" alt="Bec facilitating a one-to-one breathwork session">
   </div>
   <div class="split-body on-taupe tint">
     <div class="inner reveal">
@@ -685,7 +690,7 @@
 <!-- ================= CLOSING — split ================= -->
 <section class="split split--textleft closing" id="contact" data-screen-label="10 Closing">
   <div class="split-media reveal">
-    <img src="images/20250604-DSC03028.jpg" alt="Bec smiling warmly, surrounded by greenery">
+    <img src="print-assets/20250604-DSC03028.jpg" alt="Bec smiling warmly, surrounded by greenery">
   </div>
   <div class="split-body on-cocoa tint">
     <div class="inner reveal">
