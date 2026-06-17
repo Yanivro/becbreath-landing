@@ -1,10 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Becoming Breath — 1:1 Rebirthing Breathwork with Bec</title>
 <meta name="description" content="Trauma-informed 1:1 rebirthing breathwork with Bec. A gentle, profound conscious connected breathing practice — held in a safe, supportive container in Thailand.">
+
+<!-- Social share card — shown when the link is pasted into Instagram / WhatsApp.
+     NOTE: og:image needs an ABSOLUTE URL once this is on a real domain.
+     Replace the path below with e.g. https://yourdomain.com/print-assets/20250530-DSC02390-2.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Becoming Breath — 1:1 Rebirthing Breathwork with Bec">
+<meta property="og:description" content="A gentle way back to the wisdom, beauty & power within. Trauma-informed conscious connected breathwork, in person or online.">
+<meta property="og:image" content="print-assets/20250530-DSC02390-2.jpg">
+<meta property="og:image:alt" content="Bec seated in conscious connected breathing against a warm plaster wall">
+<meta property="og:site_name" content="Becoming Breath">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Becoming Breath — 1:1 Rebirthing Breathwork with Bec">
+<meta name="twitter:description" content="A gentle way back to the wisdom, beauty & power within. Trauma-informed conscious connected breathwork, in person or online.">
+<meta name="twitter:image" content="print-assets/20250530-DSC02390-2.jpg">
+<meta name="theme-color" content="#E7E0D1">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
@@ -22,6 +38,7 @@
     --clay:#8C7257;
     --cream:#F1E6CB;
     --bronze:#B0894F;
+    --gold:#E9C98C;
     --ink:#2C2418;
     --ink-soft:#5C4E3B;
     --on-dark:#EDE3CF;
@@ -74,6 +91,31 @@
 
   img{display:block;max-width:100%;height:auto;}
   a{color:inherit;}
+
+  /* skip link — first tab stop for keyboard users on this long page */
+  .skip-link{
+    position:absolute;left:50%;top:0;transform:translate(-50%,-130%);
+    z-index:200;background:var(--cocoa);color:var(--cream);
+    font-weight:500;font-size:.82rem;letter-spacing:.06em;
+    text-decoration:none;padding:.85em 1.4em;border-radius:0 0 4px 4px;
+    transition:transform .2s ease;
+  }
+  .skip-link:focus{transform:translate(-50%,0);outline:2px solid var(--cream);outline-offset:2px;}
+
+  /* if JS never runs, scroll-reveal content must still be visible */
+  .no-js .reveal{opacity:1;transform:none;}
+
+  /* keyboard focus — visible only for keyboard users, not mouse clicks */
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--terracotta-deep);
+    outline-offset:3px;border-radius:2px;
+  }
+  /* on dark / photo surfaces the cream ring reads better */
+  .band a:focus-visible,.band button:focus-visible,
+  .split-body a:focus-visible,.hero a:focus-visible,
+  .footer a:focus-visible,.float-cta:focus-visible{
+    outline-color:var(--cream);
+  }
 
   /* ---------------- type ---------------- */
   .eyebrow{
@@ -302,7 +344,7 @@
     line-height:1.42;color:var(--cream);margin:1.7rem 0 0;
     text-shadow:0 2px 18px rgba(20,14,8,.55);
   }
-  .quote-inner blockquote em{font-style:italic;color:#E9C98C;}
+  .quote-inner blockquote em{font-style:italic;color:var(--gold);}
   .quote-inner .by{
     display:block;margin-top:1.7rem;
     font-size:.72rem;font-weight:500;letter-spacing:.26em;
@@ -341,7 +383,7 @@
   /* pricing */
   .price-table{max-width:48rem;margin:clamp(34px,4.6vw,50px) auto 0;}
   .price-row{
-    display:flex;justify-content:space-between;align-items:baseline;
+    display:flex;justify-content:space-between;align-items:center;
     gap:1.6rem;padding:1.55rem 0;
     border-bottom:1px solid rgba(241,230,203,.26);
   }
@@ -352,12 +394,15 @@
   }
   .price-row .sub{font-size:.92rem;color:var(--on-dark);margin-top:.25rem;font-weight:300;}
   .price-row .amt{
+    position:relative;
     font-weight:300;font-size:clamp(1.3rem,2.2vw,1.6rem);
     color:var(--cream);white-space:nowrap;letter-spacing:.02em;
+    text-align:right;line-height:1;
   }
   .price-row .amt small{
-    display:block;font-size:.58rem;font-weight:500;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--bronze);margin-top:.3rem;text-align:right;
+    position:absolute;top:100%;right:0;
+    font-size:.58rem;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--bronze);margin-top:.35rem;
   }
   .integration-note{
     max-width:48rem;margin:clamp(26px,3.6vw,38px) auto 0;
@@ -366,6 +411,30 @@
     font-size:.98rem;color:var(--on-dark);font-weight:300;
   }
   .integration-note strong{color:var(--cream);}
+
+  /* currency switch */
+  .currency-switch{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;
+    margin:clamp(20px,2.6vw,30px) auto 0;
+  }
+  .currency-switch button{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:44px;min-width:44px;
+    font-family:var(--font);font-weight:500;
+    font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--on-dark);background:transparent;
+    border:1px solid rgba(241,230,203,.34);border-radius:2px;
+    padding:.5em 1.05em;cursor:pointer;line-height:1;
+    transition:background .25s ease,color .25s ease,border-color .25s ease;
+  }
+  .currency-switch button:hover{border-color:var(--cream);color:var(--cream);}
+  .currency-switch button[aria-pressed="true"]{
+    background:var(--cream);color:var(--cocoa);border-color:var(--cream);
+  }
+  .currency-note{
+    text-align:center;font-size:.8rem;color:var(--on-dark);font-weight:300;
+    margin:.95rem auto 0;letter-spacing:.02em;opacity:.85;max-width:34rem;
+  }
 
   /* before we begin */
   .prep-grid{
@@ -480,6 +549,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contact">Skip to booking</a>
 
 <!-- ================= HERO — full-bleed ================= -->
 <header class="hero" data-screen-label="01 Hero">
@@ -615,18 +685,26 @@
     <div class="sec-head center reveal">
       <h2 class="on-dark">Pricing</h2>
     </div>
+    <div class="currency-switch reveal" role="group" aria-label="Choose currency">
+      <button type="button" data-cur="THB">&#3647; THB</button>
+      <button type="button" data-cur="USD">$ USD</button>
+      <button type="button" data-cur="EUR">&euro; EUR</button>
+      <button type="button" data-cur="GBP">&pound; GBP</button>
+      <button type="button" data-cur="AUD">A$ AUD</button>
+    </div>
+    <p class="currency-note reveal">Approximate conversions &mdash; sessions are charged in Thai Baht (THB).</p>
     <div class="price-table reveal">
       <div class="price-row">
         <div><div class="name">Single session</div><div class="sub">A complete 1:1 breathwork session</div></div>
-        <div class="amt">4,000 THB</div>
+        <div class="amt"><span class="num" data-thb="4000">4,000 THB</span></div>
       </div>
       <div class="price-row">
-        <div><div class="name">Package of 3 sessions</div><div class="sub">For going deeper over time &mdash; 10,500 THB total</div></div>
-        <div class="amt">3,500 THB<small>per session</small></div>
+        <div><div class="name">Package of 3 sessions</div><div class="sub">For going deeper over time &mdash; <span class="num" data-thb="10500">10,500 THB</span> total</div></div>
+        <div class="amt"><span class="num" data-thb="3500">3,500 THB</span><small>per session</small></div>
       </div>
       <div class="price-row">
         <div><div class="name">Integration call</div><div class="sub">Approximately 1 hour</div></div>
-        <div class="amt">1,000 THB</div>
+        <div class="amt"><span class="num" data-thb="1000">1,000 THB</span></div>
       </div>
     </div>
     <p class="integration-note reveal"><strong>A note on integration calls.</strong> I highly recommend booking one in the days following your breathwork session &mdash; a space to process what came up, make meaning of your experience, and support lasting change. An optional add-on to any session.</p>
@@ -699,8 +777,11 @@
 </a>
 
 <script>
+  /* JS is running — allow scroll-reveal to start from hidden */
+  document.documentElement.classList.remove("no-js");
+
   /* WhatsApp links — replace PLACEHOLDER with Bec's number (country code, no + or spaces) */
-  var WA_NUMBER = "PLACEHOLDER";
+  var WA_NUMBER = "61421664027";
   var WA_TEXT = encodeURIComponent("Hi Bec, I found your page and I'd love to know more about a 1:1 breathwork session.");
   var waHref = "https://wa.me/" + WA_NUMBER + "?text=" + WA_TEXT;
   document.querySelectorAll("[data-wa]").forEach(function(a){
@@ -716,6 +797,42 @@
     });
   }, { threshold:.14, rootMargin:"0px 0px -7% 0px" });
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* pricing currency switch — prices are charged in THB; others are approximate */
+  (function(){
+    var RATES = {
+      THB:{symbol:"",   suffix:" THB", rate:1,     step:1},
+      USD:{symbol:"$",  suffix:"",     rate:0.029, step:5},
+      EUR:{symbol:"€", suffix:"", rate:0.027, step:5},
+      GBP:{symbol:"£", suffix:"", rate:0.023, step:5},
+      AUD:{symbol:"A$", suffix:"",     rate:0.044, step:5}
+    };
+    var nums = document.querySelectorAll(".price-table .num");
+    var btns = document.querySelectorAll(".currency-switch button");
+    if(!nums.length || !btns.length) return;
+
+    function fmt(thb, cur){
+      var c = RATES[cur];
+      var v = Math.round((thb * c.rate) / c.step) * c.step;
+      return c.symbol + v.toLocaleString("en-US") + c.suffix;
+    }
+    function render(cur){
+      if(!RATES[cur]) cur = "THB";
+      nums.forEach(function(n){
+        n.textContent = fmt(parseInt(n.getAttribute("data-thb"), 10), cur);
+      });
+      btns.forEach(function(b){
+        b.setAttribute("aria-pressed", b.getAttribute("data-cur") === cur ? "true" : "false");
+      });
+      try{ localStorage.setItem("becCurrency", cur); }catch(e){}
+    }
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){ render(b.getAttribute("data-cur")); });
+    });
+    var saved = "THB";
+    try{ saved = localStorage.getItem("becCurrency") || "THB"; }catch(e){}
+    render(saved);
+  })();
 
   /* floating CTA appears once past the hero */
   var hero = document.querySelector(".hero");
