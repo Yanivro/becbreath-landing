@@ -351,6 +351,43 @@
     text-transform:uppercase;color:var(--on-dark);opacity:.85;
   }
 
+  /* ================ CLIENT NOTES — themed testimonial cards ================ */
+  /* client voice on torn cream sheets (same device as the location cards) —
+     each card a single theme, a headline pill naming what it's about, so the
+     long review splits into curated highlights rather than one wall of praise */
+  .note-card{
+    background:var(--paper);clip-path:var(--torn);
+    padding:clamp(28px,3.4vw,38px) clamp(26px,3vw,34px);
+    filter:drop-shadow(0 10px 22px rgba(28,20,12,.26));
+    position:relative;display:flex;flex-direction:column;
+  }
+  .note-tag{
+    align-self:flex-start;line-height:1;
+    font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--cream);background:var(--terracotta);
+    padding:.55em 1.05em;border-radius:100px;margin-bottom:1.25rem;
+  }
+  .note-tag.tag-cocoa{background:var(--cocoa);}
+  .note-tag.tag-taupe{background:var(--taupe-deep);}
+  .note-card blockquote{
+    font-weight:300;color:var(--ink);font-size:1.04rem;line-height:1.62;margin:0;
+  }
+  /* the felt-experience phrase carries the colour — that's where the eye lands */
+  .note-card blockquote em{font-style:italic;color:var(--terracotta-deep);}
+  /* margin-top:auto pins attribution to the card's base so all three
+     avatars line up on one row, regardless of quote length */
+  .note-card .by{
+    display:flex;align-items:center;gap:.7em;margin-top:auto;padding-top:1.6rem;
+    font-size:.68rem;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--clay);
+  }
+  /* circular client portrait — gives the words a real, human face */
+  .note-card .avatar{
+    width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none;
+    border:1px solid rgba(176,137,79,.55);
+    box-shadow:0 2px 6px rgba(38,27,16,.2);
+  }
+
   /* ================ SECTION HEADS / plaster text sections ================ */
   .sec-head{max-width:40rem;}
   .sec-head.center{margin-inline:auto;text-align:center;}
@@ -645,6 +682,33 @@
           </div>
         </div>
         <p class="session-note"><strong>Session length</strong> &mdash; 1.5 to 2 hours. Your initial session is typically closer to 2 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENT VOICES — themed testimonial cards ================= -->
+<section class="section" data-screen-label="Client Voices">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow centered">Client Voices</span>
+      <h2>In their own words</h2>
+    </div>
+    <div class="cards-3">
+      <div class="note-card reveal">
+        <span class="note-tag">A safe container</span>
+        <blockquote>&ldquo;From the very first moment, I felt <em>completely safe</em> &mdash; safe enough to fully let go and soften.&rdquo;</blockquote>
+        <span class="by"><img class="avatar" src="images/testimonial-lisa.jpg" alt="" style="object-position:50% 42%"> Lisa</span>
+      </div>
+      <div class="note-card reveal" style="--d:1">
+        <span class="note-tag tag-cocoa">Deeper self-connection</span>
+        <blockquote>&ldquo;This was so much more than a breathwork session &mdash; it was <em>a journey back to myself</em>. I left feeling lighter, more open, and full of gratitude.&rdquo;</blockquote>
+        <span class="by"><img class="avatar" src="images/testimonial-lisa.jpg" alt="" style="object-position:50% 42%"> Lisa</span>
+      </div>
+      <div class="note-card reveal" style="--d:2">
+        <span class="note-tag tag-taupe">Clarity &amp; freedom</span>
+        <blockquote>&ldquo;It was a big session, and a real moment of healing and understanding. I came away with <em>new clarity and a deeper sense of freedom</em>.&rdquo;</blockquote>
+        <span class="by"><img class="avatar" src="images/testimonial-fern.jpg" alt="" style="object-position:56% 46%"> Fern</span>
       </div>
     </div>
   </div>
