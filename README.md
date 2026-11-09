@@ -33,6 +33,10 @@ node _make-pdf-a4.mjs      # → Becoming Breath — Landing Page (A4).pdf
 
 The A4 script also downscales photos via `sips` to keep the file under ~7 MB.
 
-## WhatsApp
+## Booking and contact
 
-The print PDFs include Bec's number (`+61 421 664 027`) on both CTAs. The live `index.html` still uses `WA_NUMBER = "PLACEHOLDER"` — swap that in `index.html` when ready to ship the site.
+- **Live site:** https://becbreath.com (GitHub Pages, with DNS at GoDaddy).
+- **Booking:** the site's "Book a free discovery call" buttons open Bec's Cal.com in a popup.
+  Short links: becbreath.com/discovery, /rebirthing and /resourcing.
+- **WhatsApp:** Bec's number (`+61 421 664 027`) is the secondary contact on the site and the print PDFs.
+- Cal.com settings, rules and how to change them: see `CLAUDE.md`. API helper: `scripts/cal.sh`.

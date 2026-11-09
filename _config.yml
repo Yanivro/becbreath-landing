@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll): keep working files off the public site
+exclude:
+  - CLAUDE.md
+  - README.md
+  - docs
+  - scripts
+  - open-design-package
+  - print-assets
+  - becbreath-framed.html
+  - becbreath-print.html
+  - becbreath-print-a4.html
