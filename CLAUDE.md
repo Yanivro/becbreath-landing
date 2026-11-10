@@ -42,3 +42,15 @@ Rules Bec asked for (all three types unless noted):
   pages in `discovery/`, `rebirthing/`, `resourcing/`, then push. Old Cal.com links 404 immediately.
 - Screenshots and other checks: Playwright is not in this repo. Install it in a scratch dir and point it at a
   local server on a free port. 8765 is often taken by another project.
+
+## Analytics
+`assets/analytics.js`, loaded on `index.html`. **Nothing loads until the visitor clicks Accept** on the cookie banner
+(choice in localStorage `bb_consent_v1`; footer "Cookie settings" link reopens it). Reports only count visitors who accepted.
+- **GA4:** property `563500719` "Becoming Breath (becbreath.com)", Measurement ID `G-NG10J2F31E`, Bangkok time, THB.
+  Created via the Admin API under GA account `275879481` with the service account in `~/.config/truecontact/funnel.env`
+  (`GA4_SA_KEY`), which can also read its data. Key events: `booking_completed`, `whatsapp_click`.
+  Event-scoped custom dimensions: `cta_text`, `cta_href`, `session_type`, `percent`, `link_url`.
+- **Clarity:** project `zbabyqiok7` (session recordings + heatmaps), in Yaniv's Clarity account.
+- **Events:** `cta_click`, `booking_open`, `booking_completed` (from the Cal.com popup's bookingSuccessful callback),
+  `whatsapp_click`, `outbound_click`, `scroll_depth`. If Cal.com event type ids change, update `SESSION_BY_ID` in analytics.js.
+- The short-link redirect pages (`/discovery` etc.) don't track. They redirect instantly.
